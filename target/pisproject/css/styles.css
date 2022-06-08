@@ -1,0 +1,43 @@
+html {
+    font-family: Consolas, "Courier New", monospace;
+}
+header {
+    background-color: #48CDFE;
+    background-image: url(../images/dollarbg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding:25px;
+    margin-bottom:25px;
+}
+nav a {
+    display: inline-block;
+    width: 22%;
+    margin: 0 0.5%;
+    padding: 0.5% 0.55%;
+    border-radius: 5%;
+    text-decoration: none;
+    text-align: center;
+    color: #000000;
+    font-size: 150%;
+    background-color: rgba(236, 226, 226, 0.9);
+}
+
+table.genericTable, .genericTable td, .genericTable th {
+    border: 1px solid;
+}
+.genericTable td, .genericTable th {
+    padding: 5px;
+}
+table.genericTable {
+    border-collapse: collapse;
+    margin:20px 0px;
+}
+#errorsmg {
+    padding: 0.25%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}

@@ -1,0 +1,66 @@
+button {
+    font-size:125%;
+    padding:15px 45px;
+    margin: 10px auto;
+}
+a.check {
+    background-color: rgba(149, 255, 100, 0.8);
+    color: #000000;
+    display:inline-block;
+    border:1px solid black;
+    margin: 10px auto;
+    padding:5px;
+    font-size:125%;
+    text-decoration: none;
+}
+table#viewCheck {
+    margin: 15px auto;
+    font-size: 125%;
+    width: 75%;
+    color: #000000;
+}
+#viewCheck tr {
+    opacity: 0.8;
+}
+#viewCheck tr:hover {
+    opacity: 1;
+}
+#viewCheck tr:nth-child(odd) {
+    color: #ffffff;
+    text-shadow: 1px 1px #000000;
+}
+#viewCheck th {
+    color:rgb(255, 255, 255);
+    text-shadow: 1px 1px #000000;
+    background: linear-gradient(0deg, rgb(125, 207, 116) 0%, rgb(58, 234, 76) 100%);
+    padding: 1.5%;
+    border: solid #000000;
+    border-width: 1px 1px 3px 1px;
+}
+#viewCheck th:first-child {
+    border-top-left-radius: 10%;
+}
+#viewCheck th:last-child {
+    border-top-right-radius: 10%;
+}
+#viewCheck th:first-child, td:first-child {
+    text-align: left;
+}
+#viewCheck td {
+    padding: 2% 15px;
+    background-color: rgb(125, 207, 116);
+    border-radius: 2%;
+    text-align: center;
+}
+#viewCheck td.bottom-left {
+    border-bottom-left-radius: 10%;
+}
+#viewCheck td.bottom-right {
+    border-bottom-right-radius: 10%;
+}
+a.intTabElem {
+    display: inline-block;
+    width:100%;
+    color: #000000;
+    text-decoration: underline;
+}

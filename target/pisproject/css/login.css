@@ -1,0 +1,22 @@
+html {
+    font-family: Consolas, "Courier New", monospace;
+}
+body {
+    font-size:125%;
+}
+form {
+    padding: 0.25%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+input {
+    font-size:100%;
+    margin-bottom: 10px;
+}
+.button {
+    width:100%;
+    padding: 10px;
+}

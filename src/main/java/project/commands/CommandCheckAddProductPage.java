@@ -25,6 +25,10 @@ public class CommandCheckAddProductPage implements ICommand {
             return Config.getInstance().getProperty(Config.ERROR);
         }
         int check_id = Integer.parseInt(s_check_id);
+        if (!checkService.isCheckEditable(check_id)) {
+            request.setAttribute("message", "Receipt is closed.");
+            return Config.getInstance().getProperty(Config.ERROR);
+        }
         List<Product> products = checkService.getAvailableProducts(check_id);
         request.setAttribute("access", true);
         request.setAttribute("checkid", check_id);

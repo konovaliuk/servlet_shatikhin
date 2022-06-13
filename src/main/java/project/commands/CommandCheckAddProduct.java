@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class CommandCheckAddProduct implements ICommand {
-    private final ProductService productService = new ProductService();
     private final CheckService checkService = new CheckService();
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -50,10 +49,10 @@ public class CommandCheckAddProduct implements ICommand {
             request.setAttribute("message", "Bad input");
             return Config.getInstance().getProperty(Config.ERROR);
         }
-        Product product = productService.getProduct(prod_id);
-        boolean result = checkService.checkAddProduct(check_id, prod_id, qty);
-        if (!result) {
-            request.setAttribute("message", "Error adding product " + prod_id + " to receipt " + check_id);
+        try {
+            checkService.checkAddProduct(check_id, prod_id, qty);
+        } catch (Exception e) {
+            request.setAttribute("message", "Error adding product " + prod_id + " to receipt " + check_id +": " + e.getMessage());
             return Config.getInstance().getProperty(Config.ERROR);
         }
         request.setAttribute("checkid", check_id);

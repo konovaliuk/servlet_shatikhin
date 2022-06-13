@@ -30,13 +30,12 @@ public class PermissionService {
         return getRolePermissions(user_role);
     }
     public List<Permission> getRolePermissions (Role role) {
-        List<Permission> perms = new ArrayList<>();
         try {
-            perms = DAOFactory.getPermissionDAO().getRolePermissions(role);
+            return DAOFactory.getPermissionDAO().getRolePermissions(role);
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
-        return perms;
     }
     //
     // do I even need it ?

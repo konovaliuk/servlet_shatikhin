@@ -13,19 +13,14 @@ public class CommandLogin implements ICommand{
     private final UserService userService = new UserService();
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String page = null;
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         HttpSession session = request.getSession();
         if (userService.checkCredentials(username, password)) {
-            session.setAttribute("registered", true);
             request.setAttribute("access", true);
             session.setAttribute("user", userService.find(username));
-            page = Config.getInstance().getProperty(Config.MAIN);
-            return page;
+            return Config.getInstance().getProperty(Config.MAIN);
         }
-        session.setAttribute("registered", false);
-        page = Config.getInstance().getProperty(Config.LOGIN);
-        return page;
+        return Config.getInstance().getProperty(Config.LOGIN);
     }
 }

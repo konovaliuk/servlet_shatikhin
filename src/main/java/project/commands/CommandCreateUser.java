@@ -27,6 +27,11 @@ public class CommandCreateUser implements ICommand {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String fullname = request.getParameter("fullname");
+        String s_role_id = request.getParameter("role");
+        if (username == null || password == null || fullname == null || s_role_id == null) {
+            request.setAttribute("message", "Bad input.");
+            return Config.getInstance().getProperty(Config.ERROR);
+        }
         int role_id = Integer.parseInt(request.getParameter("role"));
         User newUser = new User(username, password, fullname, role_id);
         int id = userService.createUser(newUser);

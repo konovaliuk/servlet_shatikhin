@@ -21,7 +21,19 @@
         if (access == null || !access) {
             response.sendRedirect("/");
         }%>
-    Main page.
+    <table class = "genericTable">
+        <caption>User information</caption>
+        <tr><th>Id</th>
+            <th>Username</th>
+            <th>Full name</th>
+            <th>Role</th></tr>
+        <tr>
+            <td>${sessionScope.user.id}</td>
+            <td>${sessionScope.user.username}</td>
+            <td>${sessionScope.user.full_name}</td>
+            <td>${sessionScope.user.role.name}</td>
+        </tr>
+    </table>
 </main>
 </body>
 </html>

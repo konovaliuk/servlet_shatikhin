@@ -27,7 +27,7 @@ public class CommandOpenAdmin implements ICommand{
             request.setAttribute("userList", userService.getAllUsers());
             return Config.getInstance().getProperty(Config.ADMIN);
         }
-        request.setAttribute("message", "No access to admin page");
+        request.setAttribute("message", "No access to admin panel.");
         return Config.getInstance().getProperty(Config.ERROR);
     }
 }

@@ -16,18 +16,16 @@ public class RoleService {
     }
     public Role getUserRole(User user) {
         int roleid = user.getRole_id();
-        Role role;
         try {
-            role = DAOFactory.getRoleDAO().getRole(roleid);
+            return DAOFactory.getRoleDAO().getRole(roleid);
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
-        return role;
     }
     public List<Role> getAllRoles() {
         try {
-            List<Role> roles = DAOFactory.getRoleDAO().getAllRoles();
-            return roles;
+            return DAOFactory.getRoleDAO().getAllRoles();
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

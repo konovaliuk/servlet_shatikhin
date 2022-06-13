@@ -3,6 +3,7 @@ package project.controller;
 import project.commands.CommandMissing;
 import project.commands.ECommands;
 import project.commands.ICommand;
+import project.entities.User;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -18,7 +19,14 @@ public class ControllerHelper {
             command = new CommandMissing();
             commandName = "missing";
         }
-        System.out.println("Executing command "+ commandName);
+
+        User user = (User) request.getSession().getAttribute("user");
+        if (user != null) {
+            System.out.println("Executing command " + commandName + " by " + user.getUsername());
+        }
+        else {
+            System.out.println("Executing command " + commandName);
+        }
         return command;
     }
     public static ControllerHelper getInstance() {

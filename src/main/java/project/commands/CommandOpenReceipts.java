@@ -27,6 +27,7 @@ public class CommandOpenReceipts implements ICommand{
             request.setAttribute("checks", checkService.getAllChecks());
             return Config.getInstance().getProperty(Config.RECEIPTS);
         }
+        request.setAttribute("message", "No access to receipts.");
         return Config.getInstance().getProperty(Config.ERROR);
     }
 }

@@ -8,18 +8,19 @@ import java.util.List;
 
 public class ProductService {
     public Product getProduct(int id) {
-        Product prod;
         try {
-            prod = DAOFactory.getProductDAO().getProduct(id);
+            return DAOFactory.getProductDAO().getProduct(id);
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
-        return prod;
     }
+
     public List<Product> getProducts() {
         try {
             return DAOFactory.getProductDAO().getProducts();
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }
